@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Representantes</title>
+        <link href="../../../Libs/bootstrap-5.3.0/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+        <script src="../../../Libs/bootstrap-5.3.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
+    </head>
+    
+<body>
+    <form action="../php/controlador_insertar.php" method="POST">
+        <div>
+            <h2 class="text-primary"> Nuevo Representante</h2>
+        </div>
+
+        <div class="container">
+            
+            <div class="form-group row">
+                <label class="col-12">Cédula  de ciudadania</label>
+                <input type="text" 
+                       class="form-control col-12" 
+                       name="txt_cedula" 
+                       id="txt_cedula" 
+                       placeholder='Cédula' 
+                       maxlength="16"  
+                       required
+                >
+            </div>
+
+            <div class="form-group row"> 
+                    <label for="txt_fecnac" ><b>Fecha/nacimiento</b></label><br>
+                    <input type="date" name="txt_fecnac" id="txt_fecnac"  ><br> 
+             </div>       
+                    
+            <div class="form-group row">
+                <label class="col-12">APELLIDO Y NOMBRES DEL REPRESENTANTE</label>
+                <input type="text" 
+                       class="form-control col-12" 
+                       name="txt_apenom" 
+                       id="txt_apenom" 
+                       placeholder='Apellidos y Nombres' 
+                       maxlength="80"  
+                       required
+                >
+            </div>
+                <div class="form-group row">
+                    <label class="col-12"><b>Sexo:</b></label>
+                    <div class="col-md-6">
+                        <div class="form-check">
+                        <input class="form-check-input" type="radio" name="rad_sexo" id="rad_masculino" value="1" checked>
+                        <label class="form-check-label" for="rad_masculino">Masculino</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-check">
+                         <input class="form-check-input" type="radio" name="rad_sexo" id="rad_femenino" value="2">
+                        <label class="form-check-label" for="rad_femenino">Femenino</label>
+                        </div>
+                    </div>
+                </div>
+
+           
+               <label for="txt_estciv"><b>Estado Civil:</b></label><br>
+                     <select name="txt_estciv" id="txt_estciv">
+                        <option value=1 >Casada(o)</option>
+                        <option value=2  selected>Soltera(o)</option>
+                        <option value=3 >Divorciada(o)</option>
+                        <option value=4 >Viuda(o)</option>
+                        <option value=5 >Unión Libre</option>
+                     </select>  
+
+            <div class="form-group row">
+                <label class="col-12">DIRECCION DOMICILIARIA</label>
+                <input type="text" 
+                       class="form-control col-12" 
+                       name="txt_domici" 
+                       id="txt_domici" 
+                       placeholder='Ingrese la dirección domiciliaria' 
+                       maxlength="100"  
+                       required
+                >
+            </div>
+                            <!-- Teléfono domicilio -->
+                <div class="form-group row">
+                    <label class="col-12">Teléfono domicilio</label>
+                    <input type="text" class="form-control" name="txt_teldom" maxlength="30" required>
+                </div>
+
+                <!-- Lugar de trabajo -->
+                <div class="form-group row">
+                    <label class="col-12">Lugar de trabajo</label>
+                    <input type="text" class="form-control" name="txt_trabaj" maxlength="100">
+                </div>
+
+                <!-- Dirección del trabajo -->
+                <div class="form-group row">
+                    <label class="col-12">Dirección del trabajo</label>
+                    <input type="text" class="form-control" name="txt_dirtra" maxlength="100">
+                </div>
+
+                <!-- Teléfono trabajo -->
+                <div class="form-group row">
+                    <label class="col-12">Teléfono trabajo</label>
+                    <input type="text" class="form-control" name="txt_teltra" maxlength="30">
+                </div>
+
+                <!-- Profesión -->
+                <div class="form-group row">
+                    <label class="col-12">Profesión</label>
+                    <input type="text" class="form-control" name="txt_profes" maxlength="20">
+                </div>
+
+                <!-- Fecha ingreso -->
+                <div class="form-group row">
+                    <label class="col-12">Fecha de ingreso</label>
+                    <input type="date" class="form-control" name="txt_fecing">
+                </div>
+
+                <!-- Suspendido -->
+                <div class="form-group row">
+                    <label class="col-12">¿Suspendido?</label>
+                    <select class="form-control" name="txt_suspen">
+                        <option value="0">No</option>
+                        <option value="1">Sí</option>
+                    </select>
+                </div>
+
+                <!-- Nacionalidad -->
+                <div class="form-group row">
+                    <label class="col-12">Nacionalidad</label>
+                    <input type="text" class="form-control" name="txt_nacion" maxlength="20">
+                </div>
+
+                <!-- Correo -->
+                <div class="form-group row">
+                    <label class="col-12">Correo</label>
+                    <input type="email" class="form-control" name="txt_correo" maxlength="100">
+                </div>
+
+                <!-- Móvil (WhatsApp) -->
+                <div class="form-group row">
+                    <label class="col-12">Número celular (WhatsApp)</label>
+                    <input type="text" class="form-control" name="txt_movilw" maxlength="10">
+                </div>
+
+                <!-- Contacto alterno -->
+                <div class="form-group row">
+                    <label class="col-12">Contacto alterno</label>
+                    <input type="text" class="form-control" name="txt_contac" maxlength="100">
+                </div>
+
+                <!-- Teléfono contacto alterno -->
+                <div class="form-group row">
+                    <label class="col-12">Teléfono contacto alterno</label>
+                    <input type="text" class="form-control" name="txt_telcon" maxlength="40">
+                </div>
+
+                <!-- Observaciones -->
+                <div class="form-group row">
+                    <label class="col-12">Observaciones</label>
+                    <textarea class="form-control" name="txt_observ" maxlength="100" rows="2"></textarea>
+                </div>
+      
+
+            <div class="form-group row">
+                <label class="col-12 text-center">
+                    <button type="submit" class="btn btn-success">Guardar representante</button>
+                </label>
+            </div>
+
+        </div>
+    </form>
+
+   
+
+</body>
+</html>
