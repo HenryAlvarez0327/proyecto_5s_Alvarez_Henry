@@ -13,7 +13,10 @@
     <div class="alert alert-light">
         <h2 class="text-primary">Gestión de Representantes</h2>
         <button type="button" class="btn btn-success" onclick="location.href = 'vista_ingresar_representantes.html'">Nuevo</button>
-        <button type="button" class="btn btn-success" onclick="reporte();">Reporte</button>
+
+        <!-- Web Component -->
+        <boton-reporte></boton-reporte>
+
         <button type="button" class="btn btn-secondary" onclick="location.href='../../admin.php'">← Volver al Panel Principal</button>
     </div>
 
@@ -36,7 +39,6 @@
             </tr>
         </thead>
         <tbody>
-            
             <tr>
                 <td>1</td>
                 <td>123</td>
@@ -90,6 +92,7 @@
             </div>
         </div>
     </div>
+
     <script>
         function abrirModalEliminar(codigo, cedula, apenom) {
             document.getElementById('txt_codigo').value = codigo;
@@ -100,10 +103,45 @@
             modal.show();
         }
     </script>
-        <script>
-        function reporte() {
-            window.open("../php/reporte_representantes.php", "_blank");
+
+    <!-- Definición del Web Component boton-reporte -->
+    <script>
+        class BotonReporte extends HTMLElement {
+            constructor() {
+                super();
+                this.attachShadow({ mode: 'open' });
+            }
+
+            connectedCallback() {
+                this.shadowRoot.innerHTML = `
+                    <style>
+                        button {
+                            all: unset;
+                            display: inline-block;
+                            padding: 6px 12px;
+                            background-color: #198754;
+                            color: white;
+                            font-weight: 600;
+                            border-radius: 4px;
+                            cursor: pointer;
+                            user-select: none;
+                            font-family: inherit;
+                            margin-left: 10px;
+                        }
+                        button:hover {
+                            background-color: #157347;
+                        }
+                    </style>
+                    <button>Reporte</button>
+                `;
+
+                this.shadowRoot.querySelector('button').addEventListener('click', () => {
+                    window.open("../php/reporte_representantes.php", "_blank");
+                });
+            }
         }
+
+        customElements.define('boton-reporte', BotonReporte);
     </script>
 </body>
 </html>
